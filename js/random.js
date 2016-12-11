@@ -2,15 +2,15 @@ var nums = [];
 
 $('#start').on('click', function(){
 	
-		var random = Math.floor((Math.random()*16) + 1);
-  		// console.log(random);
+	var random = Math.floor((Math.random()*16) + 1);
+		// console.log(random);
 
-		if(nums.indexOf(random) < 0 && nums.length < 4){
+	if(nums.indexOf(random) < 0 && nums.length < 4){
 
-			nums.push(random);
-		}
+		nums.push(random);
+	}
 
-  		nums.forEach(changeColor);
+		nums.forEach(changeColor);
  		
  		
 })
