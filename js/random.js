@@ -17,7 +17,7 @@ $('#start').on('click', function(){
 
 
 function showHistory(nums){
-	$('#history').append('<li>'+nums+'</li>');
+	$('#history').prepend('<li>'+nums+'</li>');
 	$('#start').hide();
 	$('#reset').show();
 	return nums;
