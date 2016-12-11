@@ -3,7 +3,7 @@ var nums = [];
 $('#start').on('click', function(){
 	
 		var random = Math.floor((Math.random()*16) + 1);
-  		console.log(random);
+  		// console.log(random);
 
 		if(nums.indexOf(random) < 0 && nums.length < 4){
 
@@ -15,12 +15,23 @@ $('#start').on('click', function(){
  		
 })
 
+var count = 0;
 
 function showHistory(nums){
 	$('#history').prepend('<li>'+nums+'</li>');
 	$('#start').hide();
 	$('#reset').show();
-	return nums;
+	count ++;
+	console.log(count);
+	if( count > 5 ){
+		removeData();
+	}
+}
+
+function removeData(){
+
+	$('#history li:last-child').remove();
+
 }
 
 $('#reset').on('click', function(){
