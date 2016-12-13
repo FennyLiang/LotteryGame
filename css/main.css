@@ -5,22 +5,27 @@ html, body{
 li{
 	list-style-type: none;
 	float: left;
-	width: 80px; 
-    height: 80px;
+	width: 60px; 
+    height: 60px;
     color: white;
     text-align: center;
     border-radius: 50px;
     margin-right: 10px;
-    line-height: 89px;
+    line-height: 67px;
     background: -webkit-linear-gradient(-45deg,  rgba(34,34,34,1) 0%,rgba(0,0,0,1) 100%); 
 }
 
 #values{
-	height: 380px;
-	width: 380px;
+	height: 300px;
+	width: 300px;
 }
 
 .radom_select {
-	height: 400px;
-	width: 400px;
+	height: 350px;
+	width: 350px;
+}
+
+.show_board {
+	height: 350px;
+	width: 350px;
 }
