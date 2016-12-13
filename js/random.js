@@ -1,12 +1,12 @@
 var nums = []
 var count = 0
 
-$('#start').on('click', function(){
+$('#start').on ('click', function() {
 	
 	var random = Math.floor((Math.random()*16) + 1)
 	console.log(random)
 
-	if(nums.indexOf(random) < 0 && nums.length < 4){
+	if(nums.indexOf(random) < 0 && nums.length < 4) {
 
 		nums.push(random)
 	}
@@ -51,7 +51,7 @@ function removeData () {
 function resetArray (nums) {
 
 	nums.forEach ((element, index, array) => {
-		
+
 		$('#'+element).css("color", "white")
 	})
 	
