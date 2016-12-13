@@ -24,7 +24,7 @@ function showHistory (nums) {
 		$('#history').prepend('<li>'+num+'</li>')
 
 	})
-	
+
 	$('#start').hide()
 	$('#reset').show()
 
@@ -60,6 +60,7 @@ function resetArray (nums) {
 	nums.forEach ((element, index, array) => {
 
 		$('#'+element).css("color", "white")
+		$('#'+element).css("background", "black")
 	})
 	
 	nums.length = 0
@@ -70,15 +71,20 @@ function changeColor (element, index, array) {
 
 	if( index != 3){
 
-		$('#'+element).css("color", "orange")
+		$('#'+element).css("background", "orange")
+		$('#'+element).css("color", "black")
 
 	}
 	else{
 
-		$('#'+element).css("color", "red")
+		$('#'+element).css("background", "red")
+		$('#'+element).css("color", "black")
 
 		showHistory(array)
+		}
 }
-	}
+
+
+
 
 

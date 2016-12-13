@@ -18,20 +18,21 @@ li{
     background: -webkit-linear-gradient(-45deg,  rgba(34,34,34,1) 0%,rgba(0,0,0,1) 100%); 
 }
 
-#values{
+#values {
 	height: 320px;
 	width: 320px;
+	display: inline-table;
+	position: relative;
 	border-style: solid;
 	border-radius: 20px;
 }
 
-.radom_select {
-	height: 350px;
-	width: 350px;
-	
-}
 
-.show_board {
-	height: 340px;
-	width: 340px;
+#history{
+	height: 320px;
+	width: 320px;
+	display: inline-table;
+	position: absolute;
+	border-style: solid;
+	border-radius: 20px;
 }
