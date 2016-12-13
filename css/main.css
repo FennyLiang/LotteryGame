@@ -11,21 +11,27 @@ li{
     text-align: center;
     border-radius: 50px;
     margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
     line-height: 67px;
     background: -webkit-linear-gradient(-45deg,  rgba(34,34,34,1) 0%,rgba(0,0,0,1) 100%); 
 }
 
 #values{
-	height: 300px;
-	width: 300px;
+	height: 320px;
+	width: 320px;
+	border-style: solid;
+	border-radius: 20px;
 }
 
 .radom_select {
 	height: 350px;
 	width: 350px;
+	
 }
 
 .show_board {
-	height: 350px;
-	width: 350px;
+	height: 340px;
+	width: 340px;
 }
