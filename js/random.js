@@ -19,8 +19,12 @@ $('#start').on ('click', function() {
 
 
 function showHistory (nums) {
-	$('#history').prepend('<li>'+nums+'</li>')
+	nums.map((num) => {
 
+		$('#history').prepend('<li>'+num+'</li>')
+
+	})
+	
 	$('#start').hide()
 	$('#reset').show()
 
@@ -35,6 +39,9 @@ function showHistory (nums) {
 
 function removeData () {
 
+	$('#history li:nth-last-child(4)').remove()
+	$('#history li:nth-last-child(3)').remove()
+	$('#history li:nth-last-child(2)').remove()
 	$('#history li:last-child').remove()
 
 }
