@@ -39,18 +39,19 @@ function removeData () {
 
 }
 
-$('#reset').on('click', function() {
+	$('#reset').on('click', function() {
 
-	resetArray(nums)
+		resetArray(nums)
 
-	$('#start').show()
-	$('#reset').hide()
+		$('#start').show()
+		$('#reset').hide()
 
-})
+	})
 
 function resetArray (nums) {
 
 	nums.forEach ((element, index, array) => {
+		
 		$('#'+element).css("color", "white")
 	})
 	
