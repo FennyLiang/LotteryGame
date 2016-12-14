@@ -34,7 +34,7 @@ li.last {
 
 .random_select {
 	text-align: center;
-	transform: translateY(25%);
+	/*transform: translateY(25%);*/
 }
 
 .lottery-box {
