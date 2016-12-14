@@ -67,3 +67,13 @@ li.last {
 #selected li:nth-child(4){
 	background: red;
 }
+
+button {
+	width:320px;
+	height:80px;
+	border-radius: 19px;
+	background-color:lightgray;
+	font-family: 'Mirza', cursive;
+	padding: 25px;
+	font-size: 40px;
+}
