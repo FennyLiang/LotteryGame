@@ -1,90 +1,56 @@
 var nums = []
-var count = 0
 
 $('#start').on ('click', function() {
-	
-	var random = Math.floor((Math.random()*16) + 1)
-	console.log(random)
+	var template = $('#template').html();
 
-	if(nums.indexOf(random) < 0 && nums.length < 4) {
+	if (nums.length == 4) {
+		$('#selected').html(''); //reset selected first row
 
-		nums.push(random)
+		var histories = $('#history');
+		var historyRow = '';
+
+		nums.forEach(function(num) {
+			historyRow += template.replace(/\{\{num\}\}/g, num);
+		});
+    histories.prepend(historyRow);
+
+    //Remove last Row
+		// 4 * 4 , Remove more than 17th element
+
+    $('#history li:nth-child(n+17)').remove();
+
+    //Reset nums and UI
+
+		nums = [];
+		$('#values li').removeClass('active').removeClass('last');
+
 	}
+	
+	if (nums.length <4) {
+		var num = getRandomNumber(nums, 1, 16);
+		nums.push(num);
 
-	nums.forEach(changeColor)
- 		
+		var selectedNum = $('#' + num);
+
+		$('#selected').append(template.replace(/\{\{num\}\}/g, num));
+
+		selectedNum.addClass('active');
+
+		if(nums.length == 4){
+			selectedNum.addClass('last')
+		}
+	}
  		
 })
 
+function getRandomNumber(nums, rangeStart, rangeEnd) {
 
+	var random = Math.floor((Math.random()*rangeEnd)+rangeStart);
 
-function showHistory (nums) {
-	nums.map((num) => {
-
-		$('#history').prepend('<li>'+num+'</li>')
-
-	})
-
-	$('#start').hide()
-	$('#reset').show()
-
-	count ++;
-	console.log(count)
-
-	if( count > 5 ) {
-
-		removeData()
+	while(nums.indexOf(random) > -1) {
+    random = Math.floor((Math.random()*rangeEnd)+rangeStart);
 	}
+
+	return random;
 }
-
-function removeData () {
-
-	$('#history li:nth-last-child(4)').remove()
-	$('#history li:nth-last-child(3)').remove()
-	$('#history li:nth-last-child(2)').remove()
-	$('#history li:last-child').remove()
-
-}
-
-	$('#reset').on('click', function() {
-
-		resetArray(nums)
-
-		$('#start').show()
-		$('#reset').hide()
-
-	})
-
-function resetArray (nums) {
-
-	nums.forEach ((element, index, array) => {
-
-		$('#'+element).css("color", "white")
-		$('#'+element).css("background", "black")
-	})
-	
-	nums.length = 0
-}
-
-
-function changeColor (element, index, array) {
-
-	if( index != 3){
-
-		$('#'+element).css("background", "orange")
-		$('#'+element).css("color", "black")
-
-	}
-	else{
-
-		$('#'+element).css("background", "red")
-		$('#'+element).css("color", "black")
-
-		showHistory(array)
-		}
-}
-
-
-
-
 
